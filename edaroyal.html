@@ -15,6 +15,8 @@
       --border: #dcd9d0;
       --radius: 18px;
       --shadow: 0 10px 28px rgba(0,0,0,0.08);
+      
+      /* 全站統一容器邊界變數 (1320px + 18px 邊距) */
       --site-max-width: 1320px;
       --site-gutter: 18px;
     }
@@ -31,12 +33,14 @@
       line-height: 1.8;
     }
 
+    /* 全站統一對齊容器 */
     .container {
       max-width: var(--site-max-width);
       margin: 0 auto;
       padding: 0 var(--site-gutter);
     }
 
+    /* 1. 全局 Header 區塊 */
     .site-header-wrapper {
       background-color: #111111;
       color: #ffffff;
@@ -45,6 +49,7 @@
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     .site-header-wrapper .hdr-container {
@@ -63,15 +68,29 @@
     .brand-divider { width: 1px; height: 32px; background-color: #3f3f46; }
     .brand-title-main { font-size: 1.8rem; font-weight: 900; color: #ffffff; margin: 0; line-height: 1.2; }
     .brand-title-main span { color: var(--primary); }
-    .hdr-nav { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
-    .hdr-nav-item a { color: #d4d4d8; text-decoration: none; font-size: 1.3rem; font-weight: 800; }
-    .btn-gov-cta { background: linear-gradient(135deg, #d97706 0%, #b48b3c 100%); color: #ffffff !important; font-size: 1.25rem; font-weight: 900; padding: 12px 22px; border-radius: 12px; text-decoration: none; }
+    .brand-subtitle-mini { font-size: 0.9rem; color: #a1a1aa; font-weight: 600; }
 
+    .hdr-nav { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .hdr-nav-item a { color: #d4d4d8; text-decoration: none; font-size: 1.3rem; font-weight: 800; padding: 8px 12px; border-radius: 8px; transition: all 0.2s; }
+    .hdr-nav-item a:hover { color: #ffffff; background: #27272a; }
+
+    .btn-gov-cta {
+      background: linear-gradient(135deg, #d97706 0%, #b48b3c 100%);
+      color: #ffffff !important;
+      font-size: 1.25rem;
+      font-weight: 900;
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+    }
+
+    /* 2. 飯店內頁詳細排版樣式 */
     .hotel-hero {
       background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      margin: 40px auto;
+      margin: 40px auto 60px auto;
       padding: 40px;
       border: 1px solid var(--border);
     }
@@ -82,10 +101,48 @@
       object-fit: cover;
       border-radius: 14px;
       margin-bottom: 30px;
+      display: block;
     }
 
-    .hotel-name { font-size: 3.2rem; font-weight: 900; margin: 0; color: #111; }
-    .hotel-location-tag { font-size: 1.3rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 8px; }
+    .hotel-location-tag {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hotel-title-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hotel-name {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin: 0;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .facility-chips {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .f-chip {
+      background: #f0ebd8;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 8px 20px;
+      border-radius: 10px;
+    }
 
     .promo-highlight-box {
       background: #fffbf0;
@@ -95,13 +152,35 @@
       margin-bottom: 36px;
     }
 
-    .promo-title { font-size: 1.6rem; font-weight: 900; color: #d97706; margin-bottom: 12px; }
-    .promo-desc { font-size: 1.3rem; color: #4a4a4a; margin: 0; }
+    .promo-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #d97706;
+      margin-bottom: 12px;
+    }
 
-    .section-block-title { font-size: 2rem; font-weight: 900; color: #111; margin: 40px 0 20px 0; border-left: 6px solid var(--primary); padding-left: 16px; }
+    .promo-desc {
+      font-size: 1.3rem;
+      color: #4a4a4a;
+      margin: 0;
+      line-height: 1.7;
+    }
 
-    .facility-chips { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
-    .f-chip { background: #f0ebd8; color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; padding: 8px 20px; border-radius: 10px; }
+    .section-block-title {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #111;
+      margin: 40px 0 20px 0;
+      border-left: 6px solid var(--primary);
+      padding-left: 16px;
+    }
+
+    .hotel-desc-text {
+      font-size: 1.35rem;
+      color: #333333;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
 
     .booking-bar {
       background: #111111;
@@ -112,6 +191,8 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .btn-book-now {
@@ -122,8 +203,14 @@
       padding: 16px 36px;
       border-radius: 14px;
       text-decoration: none;
+      transition: transform 0.2s;
     }
 
+    .btn-book-now:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 3. 全局 Footer 區塊 */
     .site-footer-wrapper {
       background-color: #111111;
       color: #a1a1aa;
@@ -138,7 +225,26 @@
     .site-footer-wrapper .ftr-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid #27272a; }
     .site-footer-wrapper .ftr-brand-title { font-size: 1.8rem; font-weight: 900; color: #ffffff; margin: 0 0 12px 0; }
     .site-footer-wrapper .ftr-brand-title span { color: var(--primary); }
+    .site-footer-wrapper .ftr-desc { margin: 0 0 16px 0; max-width: 520px; }
+    .site-footer-wrapper .ftr-col-title { font-size: 1.3rem; font-weight: 800; color: #ffffff; margin: 0 0 16px 0; }
+    .site-footer-wrapper .ftr-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer-wrapper .ftr-links a { color: #a1a1aa; text-decoration: none; transition: color 0.2s; }
+    .site-footer-wrapper .ftr-links a:hover { color: var(--primary); }
     .site-footer-wrapper .ftr-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; font-size: 1rem; flex-wrap: wrap; gap: 16px; }
+
+    @media (max-width: 992px) {
+      .site-header-wrapper .hdr-nav { display: none; }
+      .site-footer-wrapper .ftr-grid { grid-template-columns: 1fr; gap: 32px; }
+      .site-footer-wrapper .ftr-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      .hotel-name { font-size: 2.4rem; }
+      .hotel-cover-img { height: 320px; }
+      .hotel-hero { padding: 24px; }
+      .booking-bar { flex-direction: column; align-items: stretch; text-align: center; }
+      .btn-book-now { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -159,6 +265,7 @@
 
       <ul class="hdr-nav">
         <li class="hdr-nav-item"><a href="index.html">← 返回首頁列表</a></li>
+        <li class="hdr-nav-item"><a href="index.html#filter">縣市找飯店</a></li>
       </ul>
 
       <div class="hdr-actions">
@@ -167,7 +274,7 @@
     </div>
   </header>
 
-  <!-- 飯店內容區 -->
+  <!-- 飯店內容區 (1320px 居中對齊) -->
   <main class="container">
     <article class="hotel-hero">
       <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80" alt="義大皇家酒店" class="hotel-cover-img">
@@ -187,12 +294,14 @@
       <div class="promo-highlight-box">
         <div class="promo-title">🔥 2026 國旅補助獨家加碼樂園門票</div>
         <p class="promo-desc">
-          搭配補助預約指定住房專案，再加碼贈送<b>義大遊樂世界雙人門票</b>（價值 $1,798），讓您一站完成玩樂與住宿體驗！
+          搭配補助預約指定住房專案，再加碼贈送<b>義大遊樂世界雙人門票</b>（價值 $1,798），讓您一站完成全家歡樂玩樂與頂級住宿體驗！
         </p>
       </div>
 
       <div class="section-block-title">飯店簡介與特色</div>
-      <p>義大皇家酒店是全台唯一結合主題樂園、購物 Outlet 與高級飯店的渡假園區。擁有數百間主題客房、大型戶外游泳池與多國料理餐廳，是南台灣家庭親子旅遊的最優首選。</p>
+      <p class="hotel-desc-text">
+        義大皇家酒店是全台唯一結合主題樂園、大型購物 Outlet 與高級五星級飯店的星級渡假園區。飯店擁有數百間精緻客房、專為小朋友打造的親子主題房，以及大型戶外戲水池、水療會館與多國美食餐廳，是南台灣家庭國旅遊玩的最優首選。
+      </p>
 
       <div class="booking-bar">
         <div>
@@ -210,23 +319,30 @@
       <div class="ftr-grid">
         <div>
           <div class="ftr-brand-title">國旅補助<span>特搜網</span></div>
-          <p>1111 人力銀行旗下整合企劃平台，提供全台最新國旅補助旅宿資訊與主題旅遊行程導流服務。</p>
+          <p class="ftr-desc">
+            1111 人力銀行旗下整合企劃平台，提供全台最新國旅補助旅宿資訊、飯店獨家加碼優惠與主題旅遊行程導流服務。
+          </p>
         </div>
         <div>
           <div class="ftr-col-title">平台導覽</div>
-          <ul style="list-style:none; padding:0;">
-            <li><a href="index.html" style="color:#a1a1aa; text-decoration:none;">返回國旅補助飯店搜尋</a></li>
+          <ul class="ftr-links">
+            <li><a href="index.html">返回國旅補助飯店搜尋</a></li>
+            <li><a href="#">精選主題行程</a></li>
+            <li><a href="#">周邊景點美食</a></li>
           </ul>
         </div>
         <div>
           <div class="ftr-col-title">關於我們</div>
-          <ul style="list-style:none; padding:0;">
-            <li><a href="https://www.1111.com.tw/" target="_blank" style="color:#a1a1aa; text-decoration:none;">1111 人力銀行</a></li>
+          <ul class="ftr-links">
+            <li><a href="https://www.1111.com.tw/" target="_blank" rel="noopener">1111 人力銀行</a></li>
+            <li><a href="#">服務條款與隱私權政策</a></li>
+            <li><a href="#">合作洽詢</a></li>
           </ul>
         </div>
       </div>
       <div class="ftr-bottom">
         <div>© 2026 1111 Job Bank / 國旅補助特搜網 All Rights Reserved.</div>
+        <div>本站資訊僅供參考，實際專案內容依各飯店官方公告為準</div>
       </div>
     </div>
   </footer>
